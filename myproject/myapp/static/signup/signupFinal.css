@@ -1,0 +1,136 @@
+* {
+    box-sizing: border-box;
+    margin: 0px;
+}
+
+body {
+    width: 100vw;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color: ghostwhite
+}
+
+.wrapper {
+    width: 540px;
+    max-width: 100%;
+    border: 1px solid #AACDFF;
+    box-shadow: 7px 7px 39px rgba(0, 255, 102, 0.25);
+    border-radius: 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 30px 60px 60px 60px;
+}
+
+.error {
+    color: red;
+    height: 10px;
+    font-size: 11px;
+}
+
+h3 {
+    font-size: 32px;
+    color: #0068FF;
+    font-weight: bold;
+    width: 380px;
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+
+.inputbox {
+    width: 380px;
+    height: 60px;
+    background-color: white;
+    border-radius: 7px;
+    border: 1px solid #D2D2D2;
+    padding: 18px;
+    margin-top: 20px;
+}
+
+.inputbox::placeholder {
+    color: #797979;
+    font-size: 16px;
+}
+
+.phone__wrapper {
+    width: 380px;
+    height: 40px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 20px;
+}
+
+.phoneNum {
+    width: 100px;
+    height: 40px;
+    border: 1px solid #D2D2D2;
+    border-radius: 7px;
+    font-size: 16px;
+    text-align: center;
+}
+
+.token__wrapper {
+    width: 380px;
+    height: 40px;
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-end;
+    align-items: center;
+    margin-top: 20px;
+}
+
+.token, .token__timer {
+    color: #0068FF;
+    font-size: 18px;
+}
+
+#token__button, #token__timer__confirm__button {
+    width: 120px;
+    height: 40px;
+    border-radius: 7px;
+    margin-left: 20px;
+    border: 1px solid #D2D2D2;
+    font-size: 16px;
+}
+
+.location {
+    margin-top: 20px;
+    width: 380px;
+    height: 60px;
+    border: 1px solid #D2D2D2;
+    border-radius: 7px;
+    font-size: 16px;
+    padding: 18px;
+    color: #797979;
+}
+
+hr {
+    margin-top: 30px;
+    margin-bottom: 20px;
+    border: 1px solid #e6e6e6;
+    width: 380px;
+}
+
+#signup__button {
+    width: 380px;
+    height: 75px;
+    border: 1px solid #D2D2D2;
+    border-radius: 10px;
+    font-size: 18px;
+    transition: all 0.1s ease-in-out;
+}
+.authorized_state{
+    background-color: rgb(255,215,0); 
+    color: rgb(0, 0, 0);
+    cursor: pointer;
+}
+#signup__button.authorized_state:hover{
+    background-color: rgb(255, 196, 0);
+}
