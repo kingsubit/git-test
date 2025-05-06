@@ -1,0 +1,62 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <title>회원가입</title>
+    <link rel="stylesheet" href="{% static 'signup/signupFinal.css' %}">
+    <script src="{% static 'signup/signupFinal.js' %}"></script>
+</head>
+<body>
+    <h3>ㅇㅇ 해줘</h3>
+    <div class="wrapper">
+        
+        <input class="inputbox" id="my_id" type="text" placeholder="아이디를 입력해 주세요."/>
+        <div class="error" id="error__my_id"></div>
+
+        <input class="inputbox" id="writer" type="text" placeholder="이름을 입력해 주세요."/>
+        <div class="error" id="error__writer"></div>
+
+        <input type="text" class="inputbox" id="student_number" placeholder="학번을 입력해 주세요.">
+        <div class="error" id="error__student_number"></div>
+
+        <input class="inputbox" id="password1" type="password" placeholder="비밀번호를 입력해 주세요."/>
+        <div class="error" id="error__password1"></div>
+
+        <input class="inputbox" id="password2" type="password" placeholder="비밀번호를 다시 입력해 주세요."/>
+        <div class="error" id="error__password2"></div>
+
+        <div class="phone__wrapper">
+            <input id="phone1" class="phoneNum" type="text" onchange="changePhone1()" onkeyup="onchange()" /> 
+            <input id="phone2" class="phoneNum" onchange="changePhone2()" onkeyup="onchange()" /> 
+            <input id="phone3" class="phoneNum" onchange="changePhone3()" onkeyup="onchange()" maxlength="4" />
+        </div>
+        <div class="token__wrapper">
+            <div class="token" id="token">000000</div>
+            <button id="token__button" onclick="getToken()" disabled>인증번호 전송</button>
+        </div>
+        <div class="token__wrapper">
+            <div class="token__timer" id="token__timer">3:00</div>
+            <button id="token__timer__confirm__button" onclick="getTokenTimerConfirm()" disabled>인증 완료</button>
+        </div>
+        <div class="location__wrapper">
+            <select class="location" id="location">
+                <option disabled selected>지역을 선택하세요.</option>
+                <option>서울</option>
+                <option>경기</option>
+                <option>인천</option>
+            </select>
+        </div>
+        <div class="error" id="error__location"></div>
+        <hr />
+        <div class="footer">
+            <button id="signup__button" onclick="signup()" disabled>가입하기</button>
+        </div>
+
+        <!-- ✅ 로그인 페이지로 이동하는 링크 -->
+        <p class="login-link">이미 계정이 있으신가요? 
+            <a href="{% url 'login' %}">로그인하러 가기</a>
+        </p>
+    </div>
+</body>
+</html>
