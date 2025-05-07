@@ -23,5 +23,6 @@ urlpatterns = [
     path('admin/', admin.site.urls),
     path('signup/', views.signup_view, name='signup'),  # signup_view로 경로 연결
     path('login/', views.login_view, name='login'),
+    path('', views.home_view, name='home'),
 ]
 
