@@ -1,0 +1,126 @@
+*{
+    box-sizing: border-box;
+}
+
+.wrapper{
+    padding: 50px;
+    width: 100%;
+    /* height: 500px; */
+    
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+h1{
+    text-align: center;
+    color: #0068FF;
+    font-weight: bold;
+}
+
+.input__wrapper{  
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.inputBox{
+    width: 300px;
+    height: 50px;
+    border-radius: 2px;
+    border: 1px solid rgb(0, 145, 255);
+    margin-bottom: 5px;
+}
+
+#loginBtn{
+    width: 300px;
+    height: 50px;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    border: 0;
+    background-color: rgb(241, 235, 235);
+    transition: all 0.2s ease-in-out;
+    cursor: pointer;
+}
+
+#loginBtn:hover{
+    background-color: rgb(219, 202, 202);
+}
+
+a{
+    text-decoration: none;
+    color: black;
+}
+
+.find__wrapper{
+    margin-bottom: 20px;
+}
+
+#find__id{
+    /* background-color: yellow; */
+    padding-right: 10px;
+    border-right: 1px solid gray;
+}
+
+#find__password{
+    padding-left: 10px;
+}
+
+.otherLogin__wrapper{
+   display: flex;
+   flex-direction: row;
+   width: 200px;
+   justify-content: space-around;
+   margin-bottom: 10px;
+}
+
+#naver{
+    background-image: url(./btnG_아이콘원형.png);
+    width: 42px;
+    height: 42px;
+    background-size: contain;
+    border: none;
+    cursor: pointer;
+    background-repeat: no-repeat;
+    border-radius: 50%;
+}
+
+#kakao{
+    background-image: url(./kakaoBtn.png);
+    width: 42px;
+    height: 42px;
+    background-size: contain;
+    border: none;
+    cursor: pointer;
+    background-repeat: no-repeat;
+    border-radius: 50%;
+}
+
+#google{
+    background-image: url(./googleBtn.svg);
+    width: 42px;
+    height: 42px;
+    background-size: contain;
+    border: none;
+    cursor: pointer;
+    background-repeat: no-repeat;
+    border-radius: 50%;
+}
+
+#signUp{
+    width: 300px;
+    height: 50px;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    border: 0;
+    background-color: white;
+    border: 1.5px solid rgba(0, 0, 0, 0.338);
+    border-radius: 4px;
+    cursor: pointer;
+    transition: all 0.2s ease-in-out;
+}
+
+#signUp:hover{
+    background-color: rgba(172, 198, 231, 0.236)
+}
