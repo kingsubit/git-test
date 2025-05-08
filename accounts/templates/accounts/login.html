@@ -1,6 +1,21 @@
-<h2>로그인</h2>
-<form method="post">
-  {% csrf_token %}
-  {{ form.as_p }}
-  <button type="submit">로그인</button>
-</form>
+{% load static %}
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <title>로그인</title>
+    <link rel="stylesheet" href="{% static 'accounts/style.css' %}">
+</head>
+<body>
+    <div class="wrapper">
+        <h3>로그인</h3>
+        <form method="post">
+            {% csrf_token %}
+            <input type="text" name="username" class="inputbox" placeholder="아이디">
+            <input type="password" name="password" class="inputbox" placeholder="비밀번호">
+            <hr>
+            <button type="submit" id="signup__button">로그인</button>
+        </form>
+    </div>
+</body>
+</html>

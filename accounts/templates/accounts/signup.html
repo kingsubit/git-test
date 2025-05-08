@@ -1,6 +1,33 @@
-<h2>회원가입</h2>
-<form method="post">
-  {% csrf_token %}
-  {{ form.as_p }}
-  <button type="submit">회원가입</button>
-</form>
+{% load static %}
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <title>회원가입</title>
+    <link rel="stylesheet" href="{% static 'accounts/style.css' %}">
+</head>
+<body>
+    <div class="wrapper">
+        <h3>회원가입</h3>
+        <form method="post">
+            {% csrf_token %}
+
+            <!-- 예시 입력 필드 (필요한 필드명에 따라 수정하세요) -->
+            <input type="text" name="username" class="inputbox" placeholder="아이디">
+            <input type="email" name="email" class="inputbox" placeholder="이메일">
+            <input type="password" name="password1" class="inputbox" placeholder="비밀번호">
+            <input type="password" name="password2" class="inputbox" placeholder="비밀번호 확인">
+
+            <!-- 성별 선택 (예시) -->
+            <div class="gender__wrapper">
+                <label class="gender"><input type="radio" name="gender" value="male"> 남자</label>
+                <label class="gender"><input type="radio" name="gender" value="female"> 여자</label>
+            </div>
+
+            <hr>
+
+            <button type="submit" id="signup__button">회원가입</button>
+        </form>
+    </div>
+</body>
+</html>
