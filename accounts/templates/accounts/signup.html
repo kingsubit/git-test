@@ -7,21 +7,51 @@
     <link rel="stylesheet" href="{% static 'accounts/style.css' %}">
 </head>
 <body>
+    
+    <div class="logo">
+        <h1>ㅇㅇ 해줘</h1>
+    </div>
+    
     <div class="wrapper">
         <h3>회원가입</h3>
         <form method="post">
             {% csrf_token %}
 
-            <!-- 예시 입력 필드 (필요한 필드명에 따라 수정하세요) -->
-            <input type="text" name="username" class="inputbox" placeholder="아이디">
-            <input type="email" name="email" class="inputbox" placeholder="이메일">
-            <input type="password" name="password1" class="inputbox" placeholder="비밀번호">
-            <input type="password" name="password2" class="inputbox" placeholder="비밀번호 확인">
+            <!-- 전체 폼 에러 (비밀번호 불일치, 중복된 사용자 등) -->
+            {% if form.non_field_errors %}
+                <div class="error">{{ form.non_field_errors }}</div>
+            {% endif %}
 
-            <!-- 성별 선택 (예시) -->
-            <div class="gender__wrapper">
-                <label class="gender"><input type="radio" name="gender" value="male"> 남자</label>
-                <label class="gender"><input type="radio" name="gender" value="female"> 여자</label>
+            <!-- 아이디 -->
+            <div>
+                {% for error in form.username.errors %}
+                    <div class="error">{{ error }}</div>
+                {% endfor %}
+                <input type="text" name="username" class="inputbox" placeholder="아이디" value="{{ form.username.value|default_if_none:'' }}">
+            </div>
+
+            <!-- 이메일 -->
+            <div>
+                {% for error in form.email.errors %}
+                    <div class="error">{{ error }}</div>
+                {% endfor %}
+                <input type="email" name="email" class="inputbox" placeholder="이메일" value="{{ form.email.value|default_if_none:'' }}">
+            </div>
+
+            <!-- 비밀번호 -->
+            <div>
+                {% for error in form.password1.errors %}
+                    <div class="error">{{ error }}</div>
+                {% endfor %}
+                <input type="password" name="password1" class="inputbox" placeholder="비밀번호">
+            </div>
+
+            <!-- 비밀번호 확인 -->
+            <div>
+                {% for error in form.password2.errors %}
+                    <div class="error">{{ error }}</div>
+                {% endfor %}
+                <input type="password" name="password2" class="inputbox" placeholder="비밀번호 확인">
             </div>
 
             <hr>

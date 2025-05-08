@@ -1,6 +1,7 @@
 from django.shortcuts import render, redirect
 from django.contrib.auth import login, logout, authenticate
 from .forms import CustomUserCreationForm, CustomAuthenticationForm
+from django.contrib import messages  # 메시지 시스템 추가
 
 def signup_view(request):
     if request.method == 'POST':
